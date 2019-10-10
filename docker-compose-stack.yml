@@ -1,0 +1,15 @@
+version: "2"
+services:
+  profile-ms:
+    image: jhriverasa/user-ms:v1.0
+    ports: 
+      - "3005:3000"
+    depends_on: 
+      - profile-db
+  profile-db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: profile-db
+      MYSQL_ROOT_PASSWORD: 1234
+    ports:
+      - "3311:3306"

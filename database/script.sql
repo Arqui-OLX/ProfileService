@@ -1,0 +1,10 @@
+CREATE TABLE user (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(45) DEFAULT NULL,
+    lastname VARCHAR(45) DEFAULT NULL,
+    cc INT DEFAULT NULL,
+    location VARCHAR(45) DEFAULT NULL,
+    cellphone VARCHAR(45) DEFAULT NULL,
+    PRIMARY KEY (id)
+);
+

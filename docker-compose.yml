@@ -1,0 +1,14 @@
+version: "2"
+services:
+  profile-db:
+    build: ./database
+    ports:
+      - "3311:3306"
+
+  profile-ms:
+    build: .
+    ports: 
+      - "3005:3000"
+    depends_on: 
+      - profile-db
+  
