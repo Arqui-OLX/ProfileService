@@ -7,7 +7,8 @@ const dbConn = require('../database/db')
 router.get('/', function(req, res, next) {
   dbConn.query('SELECT * FROM user', function (error, results, fields) {
     if (error) throw error;
-    return res.send({ error: false, data: results, message: 'users list.' });
+    var jsonString = JSON.stringify(results, ["email", "nick","location","cellphone"]);
+    return res.send({ error: false, data: JSON.parse(jsonString), message: 'users list.' });
   });
 });
 
@@ -24,7 +25,8 @@ router.post('/', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
   dbConn.query('SELECT * FROM user where id = ?',req.params.id, function (error, results, fields) {
     if (error) throw error;
-    return res.send({ error: false, data: results, message: '.' });
+    var jsonString = JSON.stringify(results, ["email", "nick","location","cellphone"]);
+    return res.send({ error: false, data: JSON.parse(jsonString), message: 'User' });
   });
 });
 

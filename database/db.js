@@ -12,12 +12,13 @@ function sleep(milliseconds) {
 
 sleep(20000);
 const mysqlConnection = mysql.createConnection({
-    host: 'ec2-13-59-85-208.us-east-2.compute.amazonaws.com',
+    host: '10.42.48.116',
+    //host: '13.59.85.208',
     user: 'root',
+    port: '3306',
     //port: '3311',
     password: '1234',
-    database: 'profile-db',
-    multipleStatements: true
+    database: 'profile-db'
 });
 
        
